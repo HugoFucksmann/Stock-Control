@@ -12,10 +12,10 @@ app.use(express.json());
 dbConnection();
 app.use(express.static("public"));
 
-app.use("/", require("./routes/stock"));
+app.use("/stock", require("./routes/stock"));
 
 
-//ultimo para desplegar
+
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "public/index.html"));
 });

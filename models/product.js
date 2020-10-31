@@ -1,16 +1,24 @@
 const { Schema, model } = require("mongoose");
 
 const productSchema = Schema({
-    nombre:{
+    name:{
         type: String,
         required: true
+    },
+    description:{
+        type: String,
+        required: true
+    },
+    date:{
+        type: Date
+        
     },
     price:{
         type: Number,
         required: true
     },
     barcode:{
-        type: Number
+        type: String
     },
     vencimiento:{
         type: String
@@ -23,4 +31,4 @@ productSchema.method("toJSON", function () {
   return Object;
 });
 
-module.exports = model("products", productSchema);
+module.exports = model("Products", productSchema);
